@@ -14,20 +14,7 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      taskList: [
-        {
-          id: 1,
-          text: 'test1'
-        },
-        {
-          id: 2,
-          text: 'test2'
-        },
-        {
-          id: 3,
-          text: 'test3'
-        }
-      ],
+      taskList: [],
       taskSelected: null
     }
   },
@@ -36,10 +23,13 @@ export default {
     handleAdd(taskString){
       if(!taskString) return
       const id = Math.floor(Math.random()*10000)
-      this.taskList.push({id: id,text: taskString})
+      const newTask = {id: id,text: taskString}
+      this.taskList.push(newTask)
+      localStorage.setItem('task-list',JSON.stringify(this.taskList))
     },
     handleDelete(taskSelected){
       this.taskList = this.taskList.filter(task => task.id !== taskSelected.id)
+      localStorage.setItem('task-list',JSON.stringify(this.taskList))
     },
     handleEdit(taskSelected){
       this.taskSelected = taskSelected
@@ -48,7 +38,12 @@ export default {
       const index = this.taskList.findIndex(task => task.id === newTask.id)
       this.taskList.splice(index,1,newTask)
       this.taskSelected = null
+      localStorage.setItem('task-list',JSON.stringify(this.taskList))
     }
+  },
+  mounted(){
+    const taskList = localStorage.getItem('task-list')
+    if(taskList) this.taskList = JSON.parse(taskList)
   }
 }
 </script>

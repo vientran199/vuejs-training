@@ -4,6 +4,7 @@
 
 # npm install --global vue-cli
 # vue init webpack my-project
+# vue create <my-project>
 ## Build Setup
 
 ``` bash
