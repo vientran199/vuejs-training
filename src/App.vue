@@ -1,15 +1,17 @@
 <template>
   <div id="app">
     <!-- <router-view/> -->
-    <h1>Reaction Timer Game</h1>
+    <!-- <h1>Reaction Timer Game</h1>
     <button @click="start" :disabled="isPlaying">Play</button>
     <Block v-if="isPlaying" :delay="delay" @endgame="endGame"/>
-    <p v-if="showResults">Score: {{score}} ms</p>
+    <p v-if="showResults">Score: {{score}} ms</p> -->
+      <SignupFormVue/>
   </div>
 </template>
 
 <script>
 import Block from './components/Block.vue'
+import SignupFormVue from './components/formInput/SignupForm.vue';
 export default {
   name: 'App',
   data() {
@@ -20,7 +22,7 @@ export default {
       showResults: false
     }
   },
-  components: { Block },
+  components: { Block, SignupFormVue },
   methods: {
     start() {
       this.isPlaying = true;
