@@ -2,6 +2,9 @@
   <div id="app">
     <router-link :to="{name: 'HelloWorld'}">Helloworld</router-link> <!-- to="" -->
     <router-link to="form">SignUp</router-link>
+    <router-link to="home">Home</router-link>
+    <router-link to="computed">Computed</router-link>
+    <router-link :to="{name: 'home11'}">Home #11</router-link>
     <router-view/>
     <!-- <h1>Reaction Timer Game</h1>
     <button @click="start" :disabled="isPlaying">Play</button>
