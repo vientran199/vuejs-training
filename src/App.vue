@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    <!-- <router-view/> -->
+    <router-link :to="{name: 'HelloWorld'}">Helloworld</router-link> <!-- to="" -->
+    <router-link to="form">SignUp</router-link>
+    <router-view/>
     <!-- <h1>Reaction Timer Game</h1>
     <button @click="start" :disabled="isPlaying">Play</button>
     <Block v-if="isPlaying" :delay="delay" @endgame="endGame"/>
     <p v-if="showResults">Score: {{score}} ms</p> -->
-      <SignupFormVue/>
+      <!-- <SignupFormVue/> -->
   </div>
 </template>
 

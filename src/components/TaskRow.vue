@@ -17,7 +17,7 @@ export default {
 
 <template>
     <div>
-        <li v-if="!!taskDetail.id" :key="taskDetail.id">{{taskDetail.text}}
+        <li v-if="!!taskDetail.id" :key="taskDetail.id"><router-link :to="{name: 'detail',params:{id: taskDetail.id} }">{{taskDetail.text}}</router-link>
             <button v-on:click="() => handleEdit(taskDetail)">edit</button>
             <button v-on:click="() => handleDelete(taskDetail)">Delete</button>
         </li>
